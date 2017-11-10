@@ -1,0 +1,727 @@
+lib/src/stm32f10x_usart.c: In function 'USART_DeInit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:133:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_Init':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:184:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:185:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_BAUDRATE(USART_InitStruct->USART_BaudRate));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:186:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_WORD_LENGTH(USART_InitStruct->USART_WordLength));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:187:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_STOPBITS(USART_InitStruct->USART_StopBits));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:188:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_PARITY(USART_InitStruct->USART_Parity));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:189:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_MODE(USART_InitStruct->USART_Mode));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:190:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_HARDWARE_FLOW_CONTROL(USART_InitStruct->USART_HardwareFlowControl));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:194:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ClockInit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:306:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_123_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:307:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CLOCK(USART_ClockInitStruct->USART_Clock));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:308:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CPOL(USART_ClockInitStruct->USART_CPOL));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:309:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CPHA(USART_ClockInitStruct->USART_CPHA));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:310:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_LASTBIT(USART_ClockInitStruct->USART_LastBit));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_Cmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:354:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:355:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ITConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:393:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:394:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CONFIG_IT(USART_IT));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:395:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:399:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_DMACmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:451:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:452:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_DMAREQ(USART_DMAReq));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:453:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SetAddress':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:479:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:480:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ADDRESS(USART_Address));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_WakeUpConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:502:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:503:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_WAKEUP(USART_WakeUp));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ReceiverWakeUpCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:521:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:522:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_LINBreakDetectLengthConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:550:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:551:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_LIN_BREAK_DETECT_LENGTH(USART_LINBreakDetectLength));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_LINCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:569:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:570:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SendData':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:595:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:596:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_DATA(Data));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ReceiveData':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:612:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SendBreak':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:628:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SetGuardTime':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:644:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_123_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SetPrescaler':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:664:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SmartCardCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:683:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_123_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:684:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_SmartCardNACKCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:708:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_123_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:709:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_HalfDuplexCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:734:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:735:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_OverSampling8Cmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:765:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:766:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_OneBitMethodCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:792:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:793:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_IrDAConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:821:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:822:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_IRDA_MODE(USART_IrDAMode));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_IrDACmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:840:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:841:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_GetFlagStatus':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:878:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:879:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_FLAG(USART_FLAG));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:883:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ClearFlag':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:926:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:927:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CLEAR_FLAG(USART_FLAG));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:931:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_GetITStatus':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:961:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:962:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_GET_IT(USART_IT));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:966:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_usart.c: In function 'USART_ClearITPendingBit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:1034:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_ALL_PERIPH(USARTx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:1035:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_USART_CLEAR_IT(USART_IT));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_usart.c:1039:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_USART_123_PERIPH(USARTx));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_HSEConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:273:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_HSE(RCC_HSE));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_AdjustHSICalibrationValue':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:338:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_CALIBRATION_VALUE(HSICalibrationValue));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_HSICmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:357:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLLConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:383:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PLL_SOURCE(RCC_PLLSource));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:384:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PLL_MUL(RCC_PLLMul));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLLCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:404:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PREDIV1Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:431:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PREDIV1_SOURCE(RCC_PREDIV1_Source));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:432:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PREDIV1(RCC_PREDIV1_Div));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PREDIV2Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:459:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PREDIV2(RCC_PREDIV2_Div));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLL2Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:484:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PLL2_MUL(RCC_PLL2Mul));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLL2Cmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:508:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLL3Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:528:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PLL3_MUL(RCC_PLL3Mul));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PLL3Cmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:550:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_SYSCLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:568:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_SYSCLK_SOURCE(RCC_SYSCLKSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_HCLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:612:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_HCLK(RCC_SYSCLK));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PCLK1Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:638:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PCLK(RCC_HCLK));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_PCLK2Config':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:664:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_PCLK(RCC_HCLK));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_ITConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:703:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_IT(RCC_IT));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:704:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_OTGFSCLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:749:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_OTGFSCLK_SOURCE(RCC_OTGFSCLKSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_ADCCLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:770:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_ADCCLK(RCC_PCLK2));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_I2S2CLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:795:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_I2S2CLK_SOURCE(RCC_I2S2CLKSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_I2S3CLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:814:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_I2S3CLK_SOURCE(RCC_I2S3CLKSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_LSEConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:832:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_LSE(RCC_LSE));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_LSICmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:865:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_RTCCLKConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:882:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_RTCCLK_SOURCE(RCC_RTCCLKSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_RTCCLKCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:896:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_AHBPeriphClockCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1067:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_AHB_PERIPH(RCC_AHBPeriph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1068:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_APB2PeriphClockCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1098:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1099:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_APB1PeriphClockCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1129:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1130:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_AHBPeriphResetCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1156:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_AHB_PERIPH_RESET(RCC_AHBPeriph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1157:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_APB2PeriphResetCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1188:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_APB2_PERIPH(RCC_APB2Periph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1189:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_APB1PeriphResetCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1219:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_APB1_PERIPH(RCC_APB1Periph));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1220:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_BackupResetCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1240:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_ClockSecuritySystemCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1253:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_MCOConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1285:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_MCO(RCC_MCO));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_GetFlagStatus':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1332:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_FLAG(RCC_FLAG));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_GetITStatus':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1406:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_GET_IT(RCC_IT));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_rcc.c: In function 'RCC_ClearITPendingBit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_rcc.c:1451:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_RCC_CLEAR_IT(RCC_IT));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_DeInit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:111:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_Init':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:178:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:179:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_MODE(GPIO_InitStruct->GPIO_Mode));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:180:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN(GPIO_InitStruct->GPIO_Pin));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:187:5: note: in expansion of macro 'assert_param'
+     assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
+     ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ReadInputDataBit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:286:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:287:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ReadInputData':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:308:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ReadOutputDataBit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:324:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:325:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ReadOutputData':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:346:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_SetBits':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:361:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:362:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ResetBits':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:377:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:378:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_WriteBit':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:397:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:398:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GET_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:399:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_BIT_ACTION(BitVal));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_Write':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:420:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_PinLockConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:437:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ALL_PERIPH(GPIOx));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:438:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN(GPIO_Pin));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_EventOutputConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:466:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_EVENTOUT_PORT_SOURCE(GPIO_PortSource));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:467:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN_SOURCE(GPIO_PinSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_EventOutputCmd':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:486:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_PinRemapConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:554:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_REMAP(GPIO_Remap));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:555:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_EXTILineConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:613:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_EXTI_PORT_SOURCE(GPIO_PortSource));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:614:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_PIN_SOURCE(GPIO_PinSource));
+   ^~~~~~~~~~~~
+lib/src/stm32f10x_gpio.c: In function 'GPIO_ETH_MediaInterfaceConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/stm32f10x_gpio.c:632:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_GPIO_ETH_MEDIA_INTERFACE(GPIO_ETH_MediaInterface));
+   ^~~~~~~~~~~~
+lib/src/misc.c: In function 'NVIC_PriorityGroupConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:99:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
+   ^~~~~~~~~~~~
+lib/src/misc.c: In function 'NVIC_Init':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:117:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NVIC_InitStruct->NVIC_IRQChannelCmd));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:118:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_PREEMPTION_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelPreemptionPriority));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:119:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_SUB_PRIORITY(NVIC_InitStruct->NVIC_IRQChannelSubPriority));
+   ^~~~~~~~~~~~
+lib/src/misc.c: In function 'NVIC_SetVectorTable':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:159:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:160:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_OFFSET(Offset));
+   ^~~~~~~~~~~~
+lib/src/misc.c: In function 'NVIC_SystemLPConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:178:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_NVIC_LP(LowPowerMode));
+   ^~~~~~~~~~~~
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:179:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_FUNCTIONAL_STATE(NewState));
+   ^~~~~~~~~~~~
+lib/src/misc.c: In function 'SysTick_CLKSourceConfig':
+<command-line>:0:20: warning: statement with no effect [-Wunused-value]
+lib/src/misc.c:202:3: note: in expansion of macro 'assert_param'
+   assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
+   ^~~~~~~~~~~~
+In file included from lib/inc/stm32f10x_usart.h:32:0,
+                 from lib/config.h:1,
+                 from lib/config.c:1:
+lib/inc/stm32f10x.h:1443:31: error: expected identifier or '(' before 'RCC_TypeDef'
+ #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                               ^
+lib/config.c:3:3: note: in expansion of macro 'RCC'
+   RCC->APB2ENR |= (1<<4);
+   ^~~
+lib/inc/stm32f10x.h:1352:31: error: expected ')' before '(' token
+ #define RCC_BASE              (AHBPERIPH_BASE + 0x1000)
+                               ^
+lib/inc/stm32f10x.h:1443:46: note: in expansion of macro 'RCC_BASE'
+ #define RCC                 ((RCC_TypeDef *) RCC_BASE)
+                                              ^~~~~~~~
+lib/config.c:3:3: note: in expansion of macro 'RCC'
+   RCC->APB2ENR |= (1<<4);
+   ^~~
+lib/inc/stm32f10x.h:1410:31: error: expected identifier or '(' before 'GPIO_TypeDef'
+ #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+                               ^
+lib/config.c:5:3: note: in expansion of macro 'GPIOC'
+   GPIOC->CRH&=~(0x0F<<20);
+   ^~~~~
+lib/inc/stm32f10x.h:1317:31: error: expected ')' before '(' token
+ #define GPIOC_BASE            (APB2PERIPH_BASE + 0x1000)
+                               ^
+lib/inc/stm32f10x.h:1410:47: note: in expansion of macro 'GPIOC_BASE'
+ #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+                                               ^~~~~~~~~~
+lib/config.c:5:3: note: in expansion of macro 'GPIOC'
+   GPIOC->CRH&=~(0x0F<<20);
+   ^~~~~
+lib/inc/stm32f10x.h:1410:31: error: expected identifier or '(' before 'GPIO_TypeDef'
+ #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+                               ^
+lib/config.c:6:3: note: in expansion of macro 'GPIOC'
+   GPIOC->CRH|=(1<<21);
+   ^~~~~
+lib/inc/stm32f10x.h:1317:31: error: expected ')' before '(' token
+ #define GPIOC_BASE            (APB2PERIPH_BASE + 0x1000)
+                               ^
+lib/inc/stm32f10x.h:1410:47: note: in expansion of macro 'GPIOC_BASE'
+ #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
+                                               ^~~~~~~~~~
+lib/config.c:6:3: note: in expansion of macro 'GPIOC'
+   GPIOC->CRH|=(1<<21);
+   ^~~~~
+arm-none-eabi-ld: cannot find lib/config.o: No such file or directory
+arm-none-eabi-objcopy: 'output/m0s.elf': No such file
+arm-none-eabi-size: 'output/m0s.elf': No such file

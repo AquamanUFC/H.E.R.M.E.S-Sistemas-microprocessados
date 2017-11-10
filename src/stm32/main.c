@@ -28,12 +28,12 @@ void init(void)
   }
   usart_rxtx();
   while(1) {
-  //   GPIOC->BSRR=(1<<13);
-  //   // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
-  //   for(i=1000000;i>0;i--);
-  //   GPIOC->BRR=(1<<13);
-  // // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
-  //   for(i=1000000;i>0;i--);
+    GPIOC->BSRR=(1<<13);
+    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
+    for(i=1000000;i>0;i--);
+    GPIOC->BRR=(1<<13);
+  // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+    for(i=1000000;i>0;i--);
   }
 }
 
@@ -103,7 +103,7 @@ void USART1_IRQHandler(void)
 void usart_rxtx(void)
 {
     const unsigned char welcome_str[] = " Welcome to Bluetooth!\r\n";
-
+    uint16_t number = 456;
     /* Enable USART1 and GPIOA clock */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);
 
@@ -119,13 +119,14 @@ void usart_rxtx(void)
     /* Enable the USART1 Receive interrupt: this interrupt is generated when the
          USART1 receive data register is not empty */
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
-    void USART1_Init(void);
+    void USART1_Init(void);   
     // int i=0;
     // for(i=0;i<2;i++)
     //   piscarLed_8();
 
     /* print welcome information */
     UARTSend(welcome_str, sizeof(welcome_str));
+    UARTSendInt(number, sizeof(number));
 }
 
 /*******************************************************************************
@@ -215,6 +216,22 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
     }
 }
 
+void UARTSendInt(const uint16_t pucBuffer, unsigned long ulCount)
+{
+    //
+    // Loop while there are more characters to send.
+    //
+  USART_SendData(USART1, pucBuffer);
+    // while(ulCount--)
+    // {
+    //     USART_SendData(USART1, pucBuffer);
+    //     /* Loop until the end of transmission */
+    //     while(USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
+    //     {
+    //         piscarLed_8();
+    //     }
+    // }
+}
 
 /*****************************************************
  * Initialize USART1: enable interrupt on reception

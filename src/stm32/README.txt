@@ -1,4 +1,4 @@
-By Lucas Simão
+By Lucas Simão
 Código principal está em main.c
 OS arquivos são trazidos a partir do buildc.bat
 AS bibliotecas devem ser adicionar em buildc.bat para funcionar

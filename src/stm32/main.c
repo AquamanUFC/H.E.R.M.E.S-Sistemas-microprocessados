@@ -12,35 +12,48 @@ void GPIO_Configuration(void);
 void USART_Configuration(void);
 void USART1_IRQHandler(void);
 void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
+void usart_rxtx(void);
+
 
 void init(void)
 {
-	int i;
-	RCC->APB2ENR |= (1<<4);
-	
-	GPIOC->CRH&=~(0x0F<<20);
-	GPIOC->CRH|=(1<<21);
-	//static unsigned int *p;
-	
-	// int i;
-	// RCC->APB2ENR |= (1<<4);
-	
-	// GPIOC->CRH&=~(0x0F<<20);
-	// GPIOC->CRH|=(1<<21);
-	
-	// while(1) {
-	// 	GPIOC->BSRR=(1<<13);
-	// 	for(i=1000000;i>0;i--);
-	// 	GPIOC->BRR=(1<<13);
-	// 	for(i=1000000;i>0;i--);
-	// }
-	usart_rxtx();
-    while(1)
-    {
-
-    }
+  // Libera o clock para GPIO port C
+  int i;
+  RCC->APB2ENR |= (1<<4);
+  
+  GPIOC->CRH&=~(0x0F<<20);
+  GPIOC->CRH|=(1<<21);
+  for(i = 0;i<4;i++){
+    piscarLedPlaca();
+  }
+  usart_rxtx();
+  while(1) {
+  //   GPIOC->BSRR=(1<<13);
+  //   // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
+  //   for(i=1000000;i>0;i--);
+  //   GPIOC->BRR=(1<<13);
+  // // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+  //   for(i=1000000;i>0;i--);
+  }
 }
 
+void piscarLedPlaca(){
+    GPIOC->BSRR=(1<<13);
+    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
+    for(i=1000000;i>0;i--);
+    GPIOC->BRR=(1<<13);
+    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+    for(i=1000000;i>0;i--);
+}
+
+void piscarLed_8(){
+    // GPIOC->BSRR=(1<<13);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
+    for(i=1000000;i>0;i--);
+    // GPIOC->BRR=(1<<13);
+    GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+    for(i=1000000;i>0;i--);
+}
 // int main(void)
 // {
 
@@ -58,38 +71,33 @@ void init(void)
   */
 void USART1_IRQHandler(void)
 {
-
-	
-
-	
-	// while(1) {
-	// 	GPIOC->BSRR=(1<<13);
-	// 	for(i=1000000;i>0;i--);
-	// 	GPIOC->BRR=(1<<13);
-	// 	for(i=1000000;i>0;i--);
-	// }
-
-
-    if ((USART1->SR & USART_FLAG_RXNE) != (u16)RESET)
+  piscarLed_8();
+  if ((USART1->SR & USART_FLAG_RXNE) != (u16)RESET)
 	{
 		i = USART_ReceiveData(USART1);
 		if(i == '1'){
-			GPIOC->BSRR=(1<<13);
-			for(i=1000000;i>0;i--);
-			GPIOC->BRR=(1<<13);
-			for(i=1000000;i>0;i--);
+			// GPIOC->BSRR=(1<<13);
+			// for(i=1000000;i>0;i--);
+			// GPIOC->BRR=(1<<13);
+			// for(i=1000000;i>0;i--);
 			GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);		// Set '1' on PA8
 			UARTSend("LED ON\r\n",sizeof("LED ON\r\n"));	// Send message to UART1
 		}
 		else if(i == '0'){
-			GPIOC->BSRR=(1<<13);
-			for(i=100000;i>0;i--);
-			GPIOC->BRR=(1<<13);
-			for(i=100000;i>0;i--);
+			// GPIOC->BSRR=(1<<13);
+			// for(i=100000;i>0;i--);
+			// GPIOC->BRR=(1<<13);
+			// for(i=100000;i>0;i--);
 			GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);		// Set '0' on PA8
-			UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
+      UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
 		}
 	}
+  else{
+        GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);  
+        for(i=100000;i>0;i--);
+        GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+        UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
+  }
 }
 
 void usart_rxtx(void)
@@ -111,6 +119,10 @@ void usart_rxtx(void)
     /* Enable the USART1 Receive interrupt: this interrupt is generated when the
          USART1 receive data register is not empty */
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+    void USART1_Init(void);
+    // int i=0;
+    // for(i=0;i<2;i++)
+    //   piscarLed_8();
 
     /* print welcome information */
     UARTSend(welcome_str, sizeof(welcome_str));
@@ -198,6 +210,53 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
         /* Loop until the end of transmission */
         while(USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
         {
+            piscarLed_8();
         }
     }
+}
+
+
+/*****************************************************
+ * Initialize USART1: enable interrupt on reception
+ * of a character
+ *****************************************************/
+void USART1_Init(void)
+{
+    /* USART configuration structure for USART1 */
+    USART_InitTypeDef usart1_init_struct;
+    /* Bit configuration structure for GPIOA PIN9 and PIN10 */
+    GPIO_InitTypeDef gpioa_init_struct;
+     
+    /* Enalbe clock for USART1, AFIO and GPIOA */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_AFIO | 
+                           RCC_APB2Periph_GPIOA, ENABLE);
+                            
+    /* GPIOA PIN9 alternative function Tx */
+    gpioa_init_struct.GPIO_Pin = GPIO_Pin_9;
+    gpioa_init_struct.GPIO_Speed = GPIO_Speed_50MHz;
+    gpioa_init_struct.GPIO_Mode = GPIO_Mode_AF_PP;
+    GPIO_Init(GPIOA, &gpioa_init_struct);
+    /* GPIOA PIN9 alternative function Rx */
+    gpioa_init_struct.GPIO_Pin = GPIO_Pin_10;
+    gpioa_init_struct.GPIO_Speed = GPIO_Speed_50MHz;
+    gpioa_init_struct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIOA, &gpioa_init_struct);
+ 
+    /* Enable USART1 */
+    USART_Cmd(USART1, ENABLE);  
+    /* Baud rate 9600, 8-bit data, One stop bit
+     * No parity, Do both Rx and Tx, No HW flow control
+     */
+    usart1_init_struct.USART_BaudRate = 9600;   
+    usart1_init_struct.USART_WordLength = USART_WordLength_8b;  
+    usart1_init_struct.USART_StopBits = USART_StopBits_1;   
+    usart1_init_struct.USART_Parity = USART_Parity_No ;
+    usart1_init_struct.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+    usart1_init_struct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+    /* Configure USART1 */
+    USART_Init(USART1, &usart1_init_struct);
+    /* Enable RXNE interrupt */
+    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
+    /* Enable USART1 global interrupt */
+    NVIC_EnableIRQ(USART1_IRQn);
 }

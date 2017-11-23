@@ -1,3 +1,36 @@
+main.c: In function 'init':
+main.c:34:5: warning: implicit declaration of function 'recebeSinalSensor' [-Wimplicit-function-declaration]
+     recebeSinalSensor(i);
+     ^~~~~~~~~~~~~~~~~
+main.c:12:7: warning: unused variable 'i' [-Wunused-variable]
+   int i;
+       ^
+main.c: In function 'USART1_IRQHandler':
+main.c:91:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+       UARTSend("LED ON\r\n",sizeof("LED ON\r\n"));  // Send message to UART1
+                ^~~~~~~~~~~~
+In file included from main.c:1:0:
+lib/config.h:19:6: note: expected 'const unsigned char *' but argument is of type 'char *'
+ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
+      ^~~~~~~~
+main.c:99:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+       UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
+                ^~~~~~~~~~~~~
+In file included from main.c:1:0:
+lib/config.h:19:6: note: expected 'const unsigned char *' but argument is of type 'char *'
+ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
+      ^~~~~~~~
+main.c:106:18: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+         UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
+                  ^~~~~~~~~~~~~
+In file included from main.c:1:0:
+lib/config.h:19:6: note: expected 'const unsigned char *' but argument is of type 'char *'
+ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
+      ^~~~~~~~
+main.c: In function 'init':
+main.c:34:5: warning: 'i' is used uninitialized in this function [-Wuninitialized]
+     recebeSinalSensor(i);
+     ^~~~~~~~~~~~~~~~~~~~
 lib/src/stm32f10x_usart.c: In function 'USART_DeInit':
 <command-line>:0:20: warning: statement with no effect [-Wunused-value]
 lib/src/stm32f10x_usart.c:133:3: note: in expansion of macro 'assert_param'
@@ -674,54 +707,3 @@ lib/src/misc.c: In function 'SysTick_CLKSourceConfig':
 lib/src/misc.c:202:3: note: in expansion of macro 'assert_param'
    assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));
    ^~~~~~~~~~~~
-In file included from lib/inc/stm32f10x_usart.h:32:0,
-                 from lib/config.h:1,
-                 from lib/config.c:1:
-lib/inc/stm32f10x.h:1443:31: error: expected identifier or '(' before 'RCC_TypeDef'
- #define RCC                 ((RCC_TypeDef *) RCC_BASE)
-                               ^
-lib/config.c:3:3: note: in expansion of macro 'RCC'
-   RCC->APB2ENR |= (1<<4);
-   ^~~
-lib/inc/stm32f10x.h:1352:31: error: expected ')' before '(' token
- #define RCC_BASE              (AHBPERIPH_BASE + 0x1000)
-                               ^
-lib/inc/stm32f10x.h:1443:46: note: in expansion of macro 'RCC_BASE'
- #define RCC                 ((RCC_TypeDef *) RCC_BASE)
-                                              ^~~~~~~~
-lib/config.c:3:3: note: in expansion of macro 'RCC'
-   RCC->APB2ENR |= (1<<4);
-   ^~~
-lib/inc/stm32f10x.h:1410:31: error: expected identifier or '(' before 'GPIO_TypeDef'
- #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
-                               ^
-lib/config.c:5:3: note: in expansion of macro 'GPIOC'
-   GPIOC->CRH&=~(0x0F<<20);
-   ^~~~~
-lib/inc/stm32f10x.h:1317:31: error: expected ')' before '(' token
- #define GPIOC_BASE            (APB2PERIPH_BASE + 0x1000)
-                               ^
-lib/inc/stm32f10x.h:1410:47: note: in expansion of macro 'GPIOC_BASE'
- #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
-                                               ^~~~~~~~~~
-lib/config.c:5:3: note: in expansion of macro 'GPIOC'
-   GPIOC->CRH&=~(0x0F<<20);
-   ^~~~~
-lib/inc/stm32f10x.h:1410:31: error: expected identifier or '(' before 'GPIO_TypeDef'
- #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
-                               ^
-lib/config.c:6:3: note: in expansion of macro 'GPIOC'
-   GPIOC->CRH|=(1<<21);
-   ^~~~~
-lib/inc/stm32f10x.h:1317:31: error: expected ')' before '(' token
- #define GPIOC_BASE            (APB2PERIPH_BASE + 0x1000)
-                               ^
-lib/inc/stm32f10x.h:1410:47: note: in expansion of macro 'GPIOC_BASE'
- #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
-                                               ^~~~~~~~~~
-lib/config.c:6:3: note: in expansion of macro 'GPIOC'
-   GPIOC->CRH|=(1<<21);
-   ^~~~~
-arm-none-eabi-ld: cannot find lib/config.o: No such file or directory
-arm-none-eabi-objcopy: 'output/m0s.elf': No such file
-arm-none-eabi-size: 'output/m0s.elf': No such file

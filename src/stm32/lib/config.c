@@ -1,11 +1,14 @@
 #include "config.h"
 
-  RCC->APB2ENR |= (1<<4);
-  
-  GPIOC->CRH&=~(0x0F<<20);
-  GPIOC->CRH|=(1<<21);
+// void configurar_pino_C(void){
+//   RCC->APB2ENR |= (1<<4);
+//   GPIOC->CRH&=~(0x0F<<20);
+//   GPIOC->CRH|=(1<<21);
+// }
 
-void piscarLedPlaca()
+
+
+void piscarLedPlaca(void)
 {
     int i;
     GPIOC->BSRR=(1<<13);
@@ -26,12 +29,34 @@ void piscarLed_8(int speed){
     for(i=speed;i>0;i--);
 }
 
+void recebeSinalSensor(int *j){
+    // int i;
+    // // GPIOC->BSRR=(1<<13);
+    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
+    // for(i=speed;i>0;i--);
+    // // GPIOC->BRR=(1<<13);
+    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
+    // for(i=speed;i>0;i--);
+  
+  if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_10))
+    GPIO_SetBits(GPIOA,GPIO_Pin_8);
+  else if(!GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_10))
+    GPIO_ResetBits(GPIOA, GPIO_Pin_8);
+  // else
+  //     GPIO_ResetBits(GPIOA,GPIO_Pin_8);
+  //   int i;
+  //   for(i=100000;i>0;i--);
+  //   GPIO_ResetBits (GPIOB, GPIO_Pin_10);
+}
+
 /*******************************************************************************
 * Function Name  : GPIO_Configuration
 * Description    : Configures the different GPIO ports
 *******************************************************************************/
 void GPIO_Configuration(void)
-{
+{    
+  /* Enable USART1 and GPIOA clock */
+   RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_GPIOA, ENABLE);
   GPIO_InitTypeDef GPIO_InitStructure;
 
   /* Configure (PA.8) as output */
@@ -50,6 +75,13 @@ void GPIO_Configuration(void)
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+  /* Configure USART1 Rx (PA.10) as input floating */
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+
 }
 
 /*******************************************************************************

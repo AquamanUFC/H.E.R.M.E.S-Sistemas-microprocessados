@@ -1,38 +1,21 @@
 #include "config.h"
-// #include "stm32f10x_usart.h"
-// #include "stm32f10x_rcc.h"
-// #include "stm32f10x_gpio.h"
-// #include "misc.h"
-// void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
-// void usart_rxtx(void);
-// void USART1_IRQHandler(void);
 
 void init(void)
 {
   int i;
   // Libera o clock para GPIO port C
-  // int i;
   RCC->APB2ENR |= (1<<4);
-  
   GPIOC->CRH&=~(0x0F<<20);
   GPIOC->CRH|=(1<<21);
-    // configurar_pino_C();
-    // for(i = 0;i<4;i++){
-    //   GPIOC->BSRR=(1<<13);
-    //   // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
-    //   for(i=1000000;i>0;i--);
-    //   GPIOC->BRR=(1<<13);
-    //   // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
-    //   for(i=1000000;i>0;i--);
-    // }
-  // usart_rxtx();
+  //Libera o clock pro GPIO port C
+  usart_rxtx();
   GPIO_Configuration();
   while(1) {
     int *i;
-    // piscarLedPlaca();
-    // piscarLed_8(100000);
-    recebeSinalSensor(i);
-    // piscarLedPlaca();
+    //Função que envia e recebe o sinal do bluetooth
+
+    //Função que recebe o sinal do sensor
+    // recebeSinalSensor(i);
   }
 }
 
@@ -62,7 +45,7 @@ void usart_rxtx(void)
 
     /* print welcome information */
     UARTSend(welcome_str, sizeof(welcome_str));
-    UARTSendInt(number, sizeof(number));
+    // UARTSendInt(number, sizeof(number));
 }
 
 
@@ -83,18 +66,10 @@ void USART1_IRQHandler(void)
   {
     i = USART_ReceiveData(USART1);
     if(i == '1'){
-      // GPIOC->BSRR=(1<<13);
-      // for(i=1000000;i>0;i--);
-      // GPIOC->BRR=(1<<13);
-      // for(i=1000000;i>0;i--);
       GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);    // Set '1' on PA8
       UARTSend("LED ON\r\n",sizeof("LED ON\r\n"));  // Send message to UART1
     }
     else if(i == '0'){
-      // GPIOC->BSRR=(1<<13);
-      // for(i=100000;i>0;i--);
-      // GPIOC->BRR=(1<<13);
-      // for(i=100000;i>0;i--);
       GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);    // Set '0' on PA8
       UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
     }

@@ -1,11 +1,5 @@
 #include "config.h"
 
-// void configurar_pino_C(void){
-//   RCC->APB2ENR |= (1<<4);
-//   GPIOC->CRH&=~(0x0F<<20);
-//   GPIOC->CRH|=(1<<21);
-// }
-
 
 
 void piscarLedPlaca(void)
@@ -30,23 +24,10 @@ void piscarLed_8(int speed){
 }
 
 void recebeSinalSensor(int *j){
-    // int i;
-    // // GPIOC->BSRR=(1<<13);
-    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_SET);
-    // for(i=speed;i>0;i--);
-    // // GPIOC->BRR=(1<<13);
-    // GPIO_WriteBit(GPIOA,GPIO_Pin_8,Bit_RESET);
-    // for(i=speed;i>0;i--);
-  
   if(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_10))
     GPIO_SetBits(GPIOA,GPIO_Pin_8);
   else if(!GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_10))
     GPIO_ResetBits(GPIOA, GPIO_Pin_8);
-  // else
-  //     GPIO_ResetBits(GPIOA,GPIO_Pin_8);
-  //   int i;
-  //   for(i=100000;i>0;i--);
-  //   GPIO_ResetBits (GPIOB, GPIO_Pin_10);
 }
 
 /*******************************************************************************
@@ -81,7 +62,6 @@ void GPIO_Configuration(void)
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
-
 }
 
 /*******************************************************************************
@@ -93,7 +73,9 @@ void USART_Configuration(void)
   USART_InitTypeDef USART_InitStructure;
 
 /* USART1 configuration ------------------------------------------------------*/
-  USART_InitStructure.USART_BaudRate = 9600;    // Baud Rate
+  // USART_InitStructure.USART_BaudRate = 9600;    // Baud Rate
+  //Alterado por conta da bluepill
+  USART_InitStructure.USART_BaudRate = 7200;    // Baud Rate
   USART_InitStructure.USART_WordLength = USART_WordLength_8b;
   USART_InitStructure.USART_StopBits = USART_StopBits_1;
   USART_InitStructure.USART_Parity = USART_Parity_No;

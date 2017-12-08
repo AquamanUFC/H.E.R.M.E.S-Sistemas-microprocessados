@@ -109,7 +109,8 @@ public class BluetoothController {
             while (true) {
                 try {
                     bytes += mmInStream.read(buffer, bytes, buffer.length - bytes);
-                    Log.d("BLUETOOTH","CU + " + bytes);
+                    String s = new String(buffer);
+                    Log.d("BLUETOOTH","RECEBEU + " + s );
                     for(int i = begin; i < bytes; i++) {
                         if(buffer[i] == "#".getBytes()[0]) {
                             mHandler.obtainMessage(1, begin, i, buffer).sendToTarget();

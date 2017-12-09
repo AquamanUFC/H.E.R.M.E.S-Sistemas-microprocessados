@@ -1,4 +1,4 @@
-package microprocessados.ufc.epc;
+package microprocessados.ufc.epc.controllers;
 
 /**
  * Created by Icriarli on 08/12/2017.

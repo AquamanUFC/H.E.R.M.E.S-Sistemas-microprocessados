@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:visibility="visible"
-    tools:context="microprocessados.ufc.epc.MainScreenActivity">
+    tools:context="microprocessados.ufc.epc.activities.MainScreenActivity">
 
 
     <GridLayout

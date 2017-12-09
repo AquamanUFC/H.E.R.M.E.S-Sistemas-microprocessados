@@ -1,18 +1,18 @@
-package microprocessados.ufc.epc;
+package microprocessados.ufc.epc.activities;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
+
+import microprocessados.ufc.epc.R;
+import microprocessados.ufc.epc.controllers.BluetoothController;
+import microprocessados.ufc.epc.controllers.ConnectThread;
+import microprocessados.ufc.epc.controllers.FlowController;
 
 public class MainScreenActivity extends AppCompatActivity {
 
@@ -30,15 +30,29 @@ public class MainScreenActivity extends AppCompatActivity {
 //        flowController.setAquaConsume(10);
 
         card = (FrameLayout) findViewById(R.id.card);
-        card.setBackgroundColor(Color.parseColor("red"));
+//        card.setBackgroundColor(Color.parseColor("red"));
         try {
-            bluetoothController = new BluetoothController();
+            bluetoothController = new BluetoothController(getConnectionListener());
         }catch (BluetoothController.NoBluetoothFoundException e1){
             Toast.makeText(this,"O dispositivo não possui Bluetooth. Seu Pobre!",Toast.LENGTH_SHORT).show();
         }catch (BluetoothController.BluetoothDisabledException e2){
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
+    }
+
+    private ConnectThread.ConnectionListener getConnectionListener() {
+        return new ConnectThread.ConnectionListener() {
+            @Override
+            public void connectionSucess() {
+                Toast.makeText(getApplicationContext(), "Conectado com Sucesso", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void connectionFailed() {
+                Toast.makeText(getApplicationContext(), "Falha ao Conectar com o Dispositivo.", Toast.LENGTH_SHORT).show();
+            }
+        };
     }
 
     @Override

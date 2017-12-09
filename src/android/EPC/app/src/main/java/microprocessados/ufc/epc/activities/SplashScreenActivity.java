@@ -1,8 +1,10 @@
-package microprocessados.ufc.epc;
+package microprocessados.ufc.epc.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import microprocessados.ufc.epc.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

@@ -29,7 +29,7 @@ usart_rxtx();
 //Função que inicializa as portas do bluetooth
 void usart_rxtx(void)
 {
-    const unsigned char welcome_str[] = " Welcome to Bluetooth!\r\n";
+    const unsigned char welcome_str[] = "&Welcome to Bluetooth!\r\n#";
     uint16_t number = 456;
 
    

@@ -129,7 +129,6 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
             piscarLed_8(500000);
         }
     }
-    USART_SendData(USART1, (uint16_t) *control_char);
    
 }
 

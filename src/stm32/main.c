@@ -8,12 +8,17 @@ void init(void)
   GPIOC->CRH&=~(0x0F<<20);
   GPIOC->CRH|=(1<<21);
   //Libera o clock pro GPIO port C
-  usart_rxtx();
+  
   GPIO_Configuration();
+  for(i=0;i<5;i++){
+	piscarLedPlaca();
+	int j;
+	for(j=0;j<100000;j++);
+  }
   while(1) {
-    int *i;
+    
     //Função que envia e recebe o sinal do bluetooth
-
+usart_rxtx();
     //Função que recebe o sinal do sensor
     // recebeSinalSensor(i);
   }

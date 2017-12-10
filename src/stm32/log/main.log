@@ -1,40 +1,34 @@
 main.c: In function 'init':
-main.c:11:3: warning: implicit declaration of function 'usart_rxtx' [-Wimplicit-function-declaration]
-   usart_rxtx();
-   ^~~~~~~~~~
-main.c:14:10: warning: unused variable 'i' [-Wunused-variable]
-     int *i;
-          ^
-main.c:5:7: warning: unused variable 'i' [-Wunused-variable]
-   int i;
-       ^
+main.c:21:1: warning: implicit declaration of function 'usart_rxtx' [-Wimplicit-function-declaration]
+ usart_rxtx();
+ ^~~~~~~~~~
 main.c: At top level:
-main.c:25:6: warning: conflicting types for 'usart_rxtx'
+main.c:30:6: warning: conflicting types for 'usart_rxtx'
  void usart_rxtx(void)
       ^~~~~~~~~~
-main.c:11:3: note: previous implicit declaration of 'usart_rxtx' was here
-   usart_rxtx();
-   ^~~~~~~~~~
+main.c:21:1: note: previous implicit declaration of 'usart_rxtx' was here
+ usart_rxtx();
+ ^~~~~~~~~~
 main.c: In function 'usart_rxtx':
-main.c:28:14: warning: unused variable 'number' [-Wunused-variable]
+main.c:33:14: warning: unused variable 'number' [-Wunused-variable]
      uint16_t number = 456;
               ^~~~~~
 main.c: In function 'USART1_IRQHandler':
-main.c:70:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+main.c:75:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
        UARTSend("LED ON\r\n",sizeof("LED ON\r\n"));  // Send message to UART1
                 ^~~~~~~~~~~~
 In file included from main.c:1:0:
 lib/config.h:19:6: note: expected 'const unsigned char *' but argument is of type 'char *'
  void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
       ^~~~~~~~
-main.c:74:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+main.c:79:16: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
        UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
                 ^~~~~~~~~~~~~
 In file included from main.c:1:0:
 lib/config.h:19:6: note: expected 'const unsigned char *' but argument is of type 'char *'
  void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount);
       ^~~~~~~~
-main.c:81:18: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
+main.c:86:18: warning: pointer targets in passing argument 1 of 'UARTSend' differ in signedness [-Wpointer-sign]
          UARTSend("LED OFF\r\n",sizeof("LED OFF\r\n"));
                   ^~~~~~~~~~~~~
 In file included from main.c:1:0:

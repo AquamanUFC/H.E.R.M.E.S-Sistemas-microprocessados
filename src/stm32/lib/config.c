@@ -1,6 +1,6 @@
 #include "config.h"
 
-
+char control_char[] = "#";
 
 void piscarLedPlaca(void)
 {
@@ -129,6 +129,8 @@ void UARTSend(const unsigned char *pucBuffer, unsigned long ulCount)
             piscarLed_8(500000);
         }
     }
+    USART_SendData(USART1, (uint16_t) *control_char);
+   
 }
 
 void UARTSendInt(const uint16_t pucBuffer, unsigned long ulCount)

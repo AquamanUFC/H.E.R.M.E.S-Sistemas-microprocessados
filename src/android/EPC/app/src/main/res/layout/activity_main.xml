@@ -45,32 +45,24 @@
                     android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="AQUA"
+                    android:gravity="end"
+                    android:text="SM"
                     android:textAlignment="textEnd"
-                    android:textColor="@android:color/black"
+                    android:textColor="#75caa1"
                     android:textSize="30sp"
-                    android:visibility="visible"
-                    android:gravity="end" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="1dp"
-                    android:layout_height="80dp"
-                    android:layout_weight="1"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/logo" />
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="20dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="MAN"
+                    android:gravity="start"
+                    android:text="TB"
                     android:textAlignment="textStart"
-                    android:textColor="@android:color/black"
+                    android:textColor="#75caa1"
                     android:textSize="30sp"
-                    android:visibility="visible"
-                    android:gravity="start" />
+                    android:visibility="visible" />
 
             </LinearLayout>
 
@@ -88,7 +80,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="90dp"
-                android:background="#4CAF50"
+                android:background="#e27a11"
                 android:elevation="2dp"
                 android:visibility="visible">
 
@@ -106,7 +98,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:fontFamily="sans-serif"
-                        android:text="CONSUMO"
+                        android:text="TEMPERATURA"
                         android:textAlignment="center"
                         android:textSize="24sp"
                         android:visibility="visible" />
@@ -133,7 +125,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_marginBottom="12dp"
-                        android:text="Rodapé!"
+                        android:text="ºC"
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:visibility="visible" />

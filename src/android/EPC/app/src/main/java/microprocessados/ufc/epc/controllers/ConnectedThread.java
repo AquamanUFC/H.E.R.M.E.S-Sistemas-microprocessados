@@ -1,6 +1,8 @@
 package microprocessados.ufc.epc.controllers;
 
 import android.bluetooth.BluetoothSocket;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import java.io.IOException;
@@ -15,9 +17,9 @@ public class ConnectedThread extends Thread {
     private final BluetoothSocket mmSocket;
     private final InputStream mmInStream;
     private final OutputStream mmOutStream;
-    private android.os.Handler mHandler;
+    private Handler receiveHandler;
 
-    public ConnectedThread(BluetoothSocket socket) {
+    public ConnectedThread(BluetoothSocket socket,Handler receiveHandler) {
         mmSocket = socket;
         InputStream tmpIn = null;
         OutputStream tmpOut = null;
@@ -27,6 +29,7 @@ public class ConnectedThread extends Thread {
         } catch (IOException e) { }
         mmInStream = tmpIn;
         mmOutStream = tmpOut;
+        this.receiveHandler = receiveHandler;
     }
     public void run() {
         Log.d("BLUETOOTH","Rodando...");
@@ -38,16 +41,20 @@ public class ConnectedThread extends Thread {
                 bytes += mmInStream.read(buffer, bytes, buffer.length - bytes);
                 String s = new String(buffer);
                 Log.d("BLUETOOTH","RECEBEU + " + s );
-                for(int i = begin; i < bytes; i++) {
-                    if(buffer[i] == "#".getBytes()[0]) {
-                        mHandler.obtainMessage(1, begin, i, buffer).sendToTarget();
-                        begin = i + 1;
-                        if(i == bytes - 1) {
-                            bytes = 0;
-                            begin = 0;
-                        }
-                    }
-                }
+                Message message = new Message();
+                message.obj = buffer;
+                message.what = 2;
+                receiveHandler.sendMessage(message);
+//                for(int i = begin; i < bytes; i++) {
+//                    if(buffer[i] == "#".getBytes()[0]) {
+//                        receiveHandler.obtainMessage(1, begin, i, buffer).sendToTarget();
+//                        begin = i + 1;
+//                        if(i == bytes - 1) {
+//                            bytes = 0;
+//                            begin = 0;
+//                        }
+//                    }
+//                }
             } catch (IOException e) {
                 break;
             }

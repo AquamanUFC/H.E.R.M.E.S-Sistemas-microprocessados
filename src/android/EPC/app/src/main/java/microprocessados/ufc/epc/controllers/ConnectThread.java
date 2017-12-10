@@ -3,6 +3,8 @@ package microprocessados.ufc.epc.controllers;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.os.Handler;
+import android.os.Message;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -16,10 +18,9 @@ public class ConnectThread extends Thread {
     private final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     private BluetoothAdapter mBluetoothAdapter;
     private ConnectedThread mConnectedThread;
-    private ConnectionListener connectionListener;
+    private Handler connectionHandler;
 
-
-    public ConnectThread(BluetoothDevice device,BluetoothAdapter mBluetoothAdapter) {
+    public ConnectThread(BluetoothDevice device,BluetoothAdapter mBluetoothAdapter, Handler connectionHandler) {
         BluetoothSocket tmp = null;
         mmDevice = device;
         try {
@@ -27,39 +28,25 @@ public class ConnectThread extends Thread {
         } catch (IOException e) { }
         mmSocket = tmp;
         this.mBluetoothAdapter = mBluetoothAdapter;
-
-        connectionListener = new ConnectionListener() {
-            @Override
-            public void connectionSucess() {
-
-            }
-
-            @Override
-            public void connectionFailed() {
-
-            }
-        };
-
-    }
-
-    public void setConnectionListener(ConnectionListener connectionListener){
-        this.connectionListener = connectionListener;
+        this.connectionHandler = connectionHandler;
     }
 
     public void run(){
         mBluetoothAdapter.cancelDiscovery();
         try {
             mmSocket.connect();
-            mConnectedThread = new ConnectedThread(mmSocket);
+            mConnectedThread = new ConnectedThread(mmSocket,connectionHandler);
             mConnectedThread.start();
-            connectionListener.connectionSucess();;
+//            connectionListener.connectionSucess();
+            connectionHandler.sendEmptyMessage(1);
         } catch (Exception connectException) {
             try {
                 mmSocket.close();
             } catch (IOException closeException) {
 
             }
-            connectionListener.connectionFailed();
+//            connectionListener.connectionFailed();
+            connectionHandler.sendEmptyMessage(0);
             return;
         }
 

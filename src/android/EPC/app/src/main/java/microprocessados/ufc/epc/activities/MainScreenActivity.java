@@ -1,8 +1,13 @@
 package microprocessados.ufc.epc.activities;
 
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +24,8 @@ public class MainScreenActivity extends AppCompatActivity {
     private FlowController flowController;
     private BluetoothController bluetoothController;
     private FrameLayout card;
+    private Handler connectHandler;
+    private BluetoothDevice device;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +35,14 @@ public class MainScreenActivity extends AppCompatActivity {
 
 
 //        flowController.setAquaConsume(10);
+        device = (BluetoothDevice) getIntent().getParcelableExtra("Device");
 
         card = (FrameLayout) findViewById(R.id.card);
 //        card.setBackgroundColor(Color.parseColor("red"));
         try {
-            bluetoothController = new BluetoothController(getConnectionListener());
+            setHandler();
+            bluetoothController = new BluetoothController(connectHandler);
+            bluetoothController.connect(device);
         }catch (BluetoothController.NoBluetoothFoundException e1){
             Toast.makeText(this,"O dispositivo não possui Bluetooth. Seu Pobre!",Toast.LENGTH_SHORT).show();
         }catch (BluetoothController.BluetoothDisabledException e2){
@@ -41,18 +51,9 @@ public class MainScreenActivity extends AppCompatActivity {
         }
     }
 
-    private ConnectThread.ConnectionListener getConnectionListener() {
-        return new ConnectThread.ConnectionListener() {
-            @Override
-            public void connectionSucess() {
-                Toast.makeText(getApplicationContext(), "Conectado com Sucesso", Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void connectionFailed() {
-                Toast.makeText(getApplicationContext(), "Falha ao Conectar com o Dispositivo.", Toast.LENGTH_SHORT).show();
-            }
-        };
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message,Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -82,4 +83,31 @@ public class MainScreenActivity extends AppCompatActivity {
     public void changeCardColor(){
 
     }
+
+    @SuppressLint("HandlerLeak")
+    public void setHandler(){
+        this.connectHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what){
+                    case 0:
+                        Toast.makeText(getApplicationContext(),
+                                "Houve uma falha ao conectar com o dispositivo", Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                    case 1:
+                        Toast.makeText(getApplicationContext(),
+                                "Conectado ao dispositivo com sucesso", Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                    case 2:
+                        Toast.makeText(getApplicationContext(),
+                                "RECEBIDO DADO" + msg.obj, Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                }
+            }
+        };
+    }
+
 }

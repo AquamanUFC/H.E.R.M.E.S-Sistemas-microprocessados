@@ -2,16 +2,12 @@ package microprocessados.ufc.epc.controllers;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
+import android.os.Handler;
 import android.util.Log;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
+
 
 /**
  * Created by Icriarli on 08/12/2017.
@@ -19,13 +15,13 @@ import java.util.UUID;
 
 public class BluetoothController {
 
-    private final ConnectThread mConnectThread;
+    private ConnectThread mConnectThread;
     private BluetoothDevice mDevice;
     private BluetoothAdapter mBluetoothAdapter;
     private ConnectedThread mConnectedThread;
+    private Handler connectHandler;
 
-
-    public BluetoothController(ConnectThread.ConnectionListener connectionListener) throws NoBluetoothFoundException, BluetoothDisabledException {
+    public BluetoothController(Handler connectHandler) throws NoBluetoothFoundException, BluetoothDisabledException {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null)
             throw new NoBluetoothFoundException();
@@ -39,17 +35,25 @@ public class BluetoothController {
                 mDevice = device;
             }
         }
+        this.connectHandler = connectHandler;
 
 
-        mConnectThread = new ConnectThread(mDevice,mBluetoothAdapter);
-        mConnectThread.setConnectionListener(connectionListener);
-        mConnectThread.start();
 
     }
 
-    public Set<BluetoothDevice> getPairedDevice(){
+    public void connect(BluetoothDevice mdevice){
+        mConnectThread = new ConnectThread(mDevice,mBluetoothAdapter,connectHandler);
+        mConnectThread.start();
+    }
+
+    public ArrayList<BluetoothDevice> getPairedDevices(){
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        return new HashSet<BluetoothDevice>(pairedDevices);
+
+        ArrayList<String> list = new ArrayList();
+        for(BluetoothDevice bluetoothDevice : pairedDevices)
+            list.add(bluetoothDevice.getName());
+        Log.d("DEVICE","Paired Devices:" + pairedDevices.size());
+        return new ArrayList<>(pairedDevices);
     }
 
     public class NoBluetoothFoundException extends Throwable {

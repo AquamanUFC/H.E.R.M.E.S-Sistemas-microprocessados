@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import microprocessados.ufc.epc.R;
@@ -26,6 +27,8 @@ public class MainScreenActivity extends AppCompatActivity {
     private FrameLayout card;
     private Handler connectHandler;
     private BluetoothDevice device;
+    private TextView infoCard;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class MainScreenActivity extends AppCompatActivity {
         device = (BluetoothDevice) getIntent().getParcelableExtra("Device");
 
         card = (FrameLayout) findViewById(R.id.card);
+        infoCard = (TextView) findViewById(R.id.infoCard);
 //        card.setBackgroundColor(Color.parseColor("red"));
         try {
             setHandler();
@@ -101,9 +105,11 @@ public class MainScreenActivity extends AppCompatActivity {
                                 .show();
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),
-                                "RECEBIDO DADO" + msg.obj, Toast.LENGTH_SHORT)
-                                .show();
+                        String consumo = new String((byte[]) msg.obj);
+                        infoCard.setText(consumo);
+//                        Toast.makeText(getApplicationContext(),
+//                                "RECEBIDO DADO" + msg.obj, Toast.LENGTH_SHORT)
+//                                .show();
                         break;
                 }
             }

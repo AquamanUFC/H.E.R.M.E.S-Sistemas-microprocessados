@@ -19,6 +19,8 @@ public class ConnectedThread extends Thread {
     private final OutputStream mmOutStream;
     private Handler receiveHandler;
 
+    private static final String CONTROL_CHAR = "#";
+
     public ConnectedThread(BluetoothSocket socket,Handler receiveHandler) {
         mmSocket = socket;
         InputStream tmpIn = null;
@@ -41,20 +43,21 @@ public class ConnectedThread extends Thread {
                 bytes += mmInStream.read(buffer, bytes, buffer.length - bytes);
                 String s = new String(buffer);
                 Log.d("BLUETOOTH","RECEBEU + " + s );
-                Message message = new Message();
-                message.obj = buffer;
-                message.what = 2;
-                receiveHandler.sendMessage(message);
-//                for(int i = begin; i < bytes; i++) {
-//                    if(buffer[i] == "#".getBytes()[0]) {
+
+                for(int i = begin; i < bytes; i++) {
+                    if(buffer[i] == CONTROL_CHAR .getBytes()[0]) {
+                        Message message = new Message();
+                        message.obj = buffer;
+                        message.what = 2;
+                        receiveHandler.sendMessage(message);
 //                        receiveHandler.obtainMessage(1, begin, i, buffer).sendToTarget();
-//                        begin = i + 1;
-//                        if(i == bytes - 1) {
-//                            bytes = 0;
-//                            begin = 0;
-//                        }
-//                    }
-//                }
+                        begin = i + 1;
+                        if(i == bytes - 1) {
+                            bytes = 0;
+                            begin = 0;
+                        }
+                    }
+                }
             } catch (IOException e) {
                 break;
             }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-<ProjectName>D:\Projeto Android\H.E.R.M.E.S\src\HERMES\\HERMES</ProjectName>
+<ProjectName>C:\Users\mateu\Desktop\AQUAMANHERMES\src\HERMES\\HERMES</ProjectName>
 <CMSIS>..\Drivers\CMSIS</CMSIS>
-<HAL_Driver>C:\Users\Simao\STM32Cube\Repository\STM32Cube_FW_F1_V1.6.0\Drivers\CMSIS</HAL_Driver>
+<HAL_Driver>C:\Users\mateu\STM32Cube\Repository\STM32Cube_FW_F1_V1.6.0\Drivers\CMSIS</HAL_Driver>
 
 <Toolchain>TrueSTUDIO</Toolchain>
 <Version>0</Version>

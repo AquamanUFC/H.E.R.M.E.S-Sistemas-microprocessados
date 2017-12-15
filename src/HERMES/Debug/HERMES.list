@@ -21,23 +21,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   8 .ARM.attributes 00000029  00000000  00000000  00020068  2**0
                   CONTENTS, READONLY
-  9 .debug_info   0000b2f4  00000000  00000000  00020091  2**0
+  9 .debug_info   0000b2d2  00000000  00000000  00020091  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00001b55  00000000  00000000  0002b385  2**0
+ 10 .debug_abbrev 00001b3d  00000000  00000000  0002b363  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000263e  00000000  00000000  0002ceda  2**0
+ 11 .debug_loc    0000263e  00000000  00000000  0002cea0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 00000560  00000000  00000000  0002f518  2**3
+ 12 .debug_aranges 00000560  00000000  00000000  0002f4e0  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000650  00000000  00000000  0002fa78  2**3
+ 13 .debug_ranges 00000650  00000000  00000000  0002fa40  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   00003344  00000000  00000000  000300c8  2**0
+ 14 .debug_line   00003344  00000000  00000000  00030090  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    0000210b  00000000  00000000  0003340c  2**0
+ 15 .debug_str    0000210b  00000000  00000000  000333d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007c  00000000  00000000  00035517  2**0
+ 16 .comment      0000007c  00000000  00000000  000354df  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  00001270  00000000  00000000  00035594  2**2
+ 17 .debug_frame  00001270  00000000  00000000  0003555c  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -2966,110 +2966,110 @@ void sendData(u_int8_t *message,int size){
  800171c:	20000098 	.word	0x20000098
  8001720:	080024ec 	.word	0x080024ec
 
-08001724 <sendLitters>:
-
-/**Função que envia os litros direto por bluetooth*/
-void sendLitters(double number){
- 8001724:	b580      	push	{r7, lr}
- 8001726:	b08a      	sub	sp, #40	; 0x28
- 8001728:	af00      	add	r7, sp, #0
- 800172a:	e9c7 0100 	strd	r0, r1, [r7]
-	char message[16];
-	//	  int intpart = (int)number;
-	int intpart = getInteger(number);
- 800172e:	e9d7 0100 	ldrd	r0, r1, [r7]
- 8001732:	f000 f84b 	bl	80017cc <getInteger>
- 8001736:	6278      	str	r0, [r7, #36]	; 0x24
-	//	  double decpart = (number - intpart)*10000;
-	int fraction = getFraction(number);
- 8001738:	e9d7 0100 	ldrd	r0, r1, [r7]
- 800173c:	f000 f816 	bl	800176c <getFraction>
- 8001740:	6238      	str	r0, [r7, #32]
-	int len = sprintf(message, "%d.%03d", intpart, fraction);
- 8001742:	f107 000c 	add.w	r0, r7, #12
- 8001746:	6a3b      	ldr	r3, [r7, #32]
- 8001748:	6a7a      	ldr	r2, [r7, #36]	; 0x24
- 800174a:	4907      	ldr	r1, [pc, #28]	; (8001768 <sendLitters+0x44>)
- 800174c:	f000 fa7e 	bl	8001c4c <siprintf>
- 8001750:	61f8      	str	r0, [r7, #28]
-
-	sendData((u_int8_t *)(&message),sizeof(len));
- 8001752:	f107 030c 	add.w	r3, r7, #12
- 8001756:	2104      	movs	r1, #4
- 8001758:	4618      	mov	r0, r3
- 800175a:	f7ff ffb9 	bl	80016d0 <sendData>
-}
- 800175e:	bf00      	nop
- 8001760:	3728      	adds	r7, #40	; 0x28
- 8001762:	46bd      	mov	sp, r7
- 8001764:	bd80      	pop	{r7, pc}
- 8001766:	bf00      	nop
- 8001768:	080024f0 	.word	0x080024f0
-
-0800176c <getFraction>:
+08001724 <getFraction>:
 
 //Retorna a fração de um double
 int getFraction(double number){
- 800176c:	b590      	push	{r4, r7, lr}
- 800176e:	b089      	sub	sp, #36	; 0x24
- 8001770:	af00      	add	r7, sp, #0
- 8001772:	e9c7 0100 	strd	r0, r1, [r7]
+ 8001724:	b590      	push	{r4, r7, lr}
+ 8001726:	b089      	sub	sp, #36	; 0x24
+ 8001728:	af00      	add	r7, sp, #0
+ 800172a:	e9c7 0100 	strd	r0, r1, [r7]
 	int intpart = (int)number;
- 8001776:	e9d7 0100 	ldrd	r0, r1, [r7]
- 800177a:	f7ff f8b3 	bl	80008e4 <__aeabi_d2iz>
- 800177e:	4603      	mov	r3, r0
- 8001780:	61fb      	str	r3, [r7, #28]
+ 800172e:	e9d7 0100 	ldrd	r0, r1, [r7]
+ 8001732:	f7ff f8d7 	bl	80008e4 <__aeabi_d2iz>
+ 8001736:	4603      	mov	r3, r0
+ 8001738:	61fb      	str	r3, [r7, #28]
 	double decpart = (number - intpart)*ACCURACY;
- 8001782:	69f8      	ldr	r0, [r7, #28]
- 8001784:	f7fe fe36 	bl	80003f4 <__aeabi_i2d>
- 8001788:	4603      	mov	r3, r0
- 800178a:	460c      	mov	r4, r1
- 800178c:	461a      	mov	r2, r3
- 800178e:	4623      	mov	r3, r4
- 8001790:	e9d7 0100 	ldrd	r0, r1, [r7]
- 8001794:	f7fe fce0 	bl	8000158 <__aeabi_dsub>
- 8001798:	4603      	mov	r3, r0
- 800179a:	460c      	mov	r4, r1
- 800179c:	4618      	mov	r0, r3
- 800179e:	4621      	mov	r1, r4
- 80017a0:	f04f 0200 	mov.w	r2, #0
- 80017a4:	4b08      	ldr	r3, [pc, #32]	; (80017c8 <getFraction+0x5c>)
- 80017a6:	f7fe fe8b 	bl	80004c0 <__aeabi_dmul>
- 80017aa:	4603      	mov	r3, r0
- 80017ac:	460c      	mov	r4, r1
- 80017ae:	e9c7 3404 	strd	r3, r4, [r7, #16]
+ 800173a:	69f8      	ldr	r0, [r7, #28]
+ 800173c:	f7fe fe5a 	bl	80003f4 <__aeabi_i2d>
+ 8001740:	4603      	mov	r3, r0
+ 8001742:	460c      	mov	r4, r1
+ 8001744:	461a      	mov	r2, r3
+ 8001746:	4623      	mov	r3, r4
+ 8001748:	e9d7 0100 	ldrd	r0, r1, [r7]
+ 800174c:	f7fe fd04 	bl	8000158 <__aeabi_dsub>
+ 8001750:	4603      	mov	r3, r0
+ 8001752:	460c      	mov	r4, r1
+ 8001754:	4618      	mov	r0, r3
+ 8001756:	4621      	mov	r1, r4
+ 8001758:	f04f 0200 	mov.w	r2, #0
+ 800175c:	4b08      	ldr	r3, [pc, #32]	; (8001780 <getFraction+0x5c>)
+ 800175e:	f7fe feaf 	bl	80004c0 <__aeabi_dmul>
+ 8001762:	4603      	mov	r3, r0
+ 8001764:	460c      	mov	r4, r1
+ 8001766:	e9c7 3404 	strd	r3, r4, [r7, #16]
 	int dec =  (int)decpart;
- 80017b2:	e9d7 0104 	ldrd	r0, r1, [r7, #16]
- 80017b6:	f7ff f895 	bl	80008e4 <__aeabi_d2iz>
- 80017ba:	4603      	mov	r3, r0
- 80017bc:	60fb      	str	r3, [r7, #12]
+ 800176a:	e9d7 0104 	ldrd	r0, r1, [r7, #16]
+ 800176e:	f7ff f8b9 	bl	80008e4 <__aeabi_d2iz>
+ 8001772:	4603      	mov	r3, r0
+ 8001774:	60fb      	str	r3, [r7, #12]
 	return dec;
- 80017be:	68fb      	ldr	r3, [r7, #12]
+ 8001776:	68fb      	ldr	r3, [r7, #12]
 }
- 80017c0:	4618      	mov	r0, r3
- 80017c2:	3724      	adds	r7, #36	; 0x24
- 80017c4:	46bd      	mov	sp, r7
- 80017c6:	bd90      	pop	{r4, r7, pc}
- 80017c8:	408f4000 	.word	0x408f4000
+ 8001778:	4618      	mov	r0, r3
+ 800177a:	3724      	adds	r7, #36	; 0x24
+ 800177c:	46bd      	mov	sp, r7
+ 800177e:	bd90      	pop	{r4, r7, pc}
+ 8001780:	408f4000 	.word	0x408f4000
 
-080017cc <getInteger>:
+08001784 <getInteger>:
 //Retorna a parte inteira de um double
 int getInteger(double number){
- 80017cc:	b580      	push	{r7, lr}
- 80017ce:	b082      	sub	sp, #8
- 80017d0:	af00      	add	r7, sp, #0
- 80017d2:	e9c7 0100 	strd	r0, r1, [r7]
+ 8001784:	b580      	push	{r7, lr}
+ 8001786:	b082      	sub	sp, #8
+ 8001788:	af00      	add	r7, sp, #0
+ 800178a:	e9c7 0100 	strd	r0, r1, [r7]
 	return (int)number;
- 80017d6:	e9d7 0100 	ldrd	r0, r1, [r7]
- 80017da:	f7ff f883 	bl	80008e4 <__aeabi_d2iz>
- 80017de:	4603      	mov	r3, r0
+ 800178e:	e9d7 0100 	ldrd	r0, r1, [r7]
+ 8001792:	f7ff f8a7 	bl	80008e4 <__aeabi_d2iz>
+ 8001796:	4603      	mov	r3, r0
 }
- 80017e0:	4618      	mov	r0, r3
- 80017e2:	3708      	adds	r7, #8
- 80017e4:	46bd      	mov	sp, r7
- 80017e6:	bd80      	pop	{r7, pc}
+ 8001798:	4618      	mov	r0, r3
+ 800179a:	3708      	adds	r7, #8
+ 800179c:	46bd      	mov	sp, r7
+ 800179e:	bd80      	pop	{r7, pc}
+
+080017a0 <sendLitters>:
+
+/**Função que envia os litros direto por bluetooth*/
+void sendLitters(double number){
+ 80017a0:	b580      	push	{r7, lr}
+ 80017a2:	b08a      	sub	sp, #40	; 0x28
+ 80017a4:	af00      	add	r7, sp, #0
+ 80017a6:	e9c7 0100 	strd	r0, r1, [r7]
+	char message[16];
+	//	  int intpart = (int)number;
+	int intpart = getInteger(number);
+ 80017aa:	e9d7 0100 	ldrd	r0, r1, [r7]
+ 80017ae:	f7ff ffe9 	bl	8001784 <getInteger>
+ 80017b2:	6278      	str	r0, [r7, #36]	; 0x24
+	//	  double decpart = (number - intpart)*10000;
+	int fraction = getFraction(number);
+ 80017b4:	e9d7 0100 	ldrd	r0, r1, [r7]
+ 80017b8:	f7ff ffb4 	bl	8001724 <getFraction>
+ 80017bc:	6238      	str	r0, [r7, #32]
+	int len = sprintf(message, "%d.%03d", intpart, fraction);
+ 80017be:	f107 000c 	add.w	r0, r7, #12
+ 80017c2:	6a3b      	ldr	r3, [r7, #32]
+ 80017c4:	6a7a      	ldr	r2, [r7, #36]	; 0x24
+ 80017c6:	4907      	ldr	r1, [pc, #28]	; (80017e4 <sendLitters+0x44>)
+ 80017c8:	f000 fa40 	bl	8001c4c <siprintf>
+ 80017cc:	61f8      	str	r0, [r7, #28]
+	sendData((u_int8_t *)(&message),sizeof(len)+1);
+ 80017ce:	f107 030c 	add.w	r3, r7, #12
+ 80017d2:	2105      	movs	r1, #5
+ 80017d4:	4618      	mov	r0, r3
+ 80017d6:	f7ff ff7b 	bl	80016d0 <sendData>
+}
+ 80017da:	bf00      	nop
+ 80017dc:	3728      	adds	r7, #40	; 0x28
+ 80017de:	46bd      	mov	sp, r7
+ 80017e0:	bd80      	pop	{r7, pc}
+ 80017e2:	bf00      	nop
+ 80017e4:	080024f0 	.word	0x080024f0
 
 080017e8 <getLitters>:
+
 //Retorna o número de litros gastos
 double getLitters(int npulls){
  80017e8:	b590      	push	{r4, r7, lr}
@@ -3475,7 +3475,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
  8001a2c:	e9c7 0102 	strd	r0, r1, [r7, #8]
 	sendLitters(litters);
  8001a30:	e9d7 0102 	ldrd	r0, r1, [r7, #8]
- 8001a34:	f7ff fe76 	bl	8001724 <sendLitters>
+ 8001a34:	f7ff feb4 	bl	80017a0 <sendLitters>
 }
  8001a38:	bf00      	nop
  8001a3a:	3710      	adds	r7, #16

@@ -91,18 +91,6 @@ void sendData(u_int8_t *message,int size){
 
 }
 
-/**Função que envia os litros direto por bluetooth*/
-void sendLitters(double number){
-	char message[16];
-	//	  int intpart = (int)number;
-	int intpart = getInteger(number);
-	//	  double decpart = (number - intpart)*10000;
-	int fraction = getFraction(number);
-	int len = sprintf(message, "%d.%03d", intpart, fraction);
-
-	sendData((u_int8_t *)(&message),sizeof(len));
-}
-
 //Retorna a fração de um double
 int getFraction(double number){
 	int intpart = (int)number;
@@ -114,6 +102,18 @@ int getFraction(double number){
 int getInteger(double number){
 	return (int)number;
 }
+
+/**Função que envia os litros direto por bluetooth*/
+void sendLitters(double number){
+	char message[16];
+	//	  int intpart = (int)number;
+	int intpart = getInteger(number);
+	//	  double decpart = (number - intpart)*10000;
+	int fraction = getFraction(number);
+	int len = sprintf(message, "%d.%03d", intpart, fraction);
+	sendData((u_int8_t *)(&message),sizeof(len)+1);
+}
+
 //Retorna o número de litros gastos
 double getLitters(int npulls){
 	return npulls/450.0;

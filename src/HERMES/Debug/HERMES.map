@@ -759,15 +759,15 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 8.1.0/armtools/bin/../lib
  .text.sendData
                 0x080016d0       0x54 Src\main.o
                 0x080016d0                sendData
- .text.sendLitters
-                0x08001724       0x48 Src\main.o
-                0x08001724                sendLitters
  .text.getFraction
-                0x0800176c       0x60 Src\main.o
-                0x0800176c                getFraction
+                0x08001724       0x60 Src\main.o
+                0x08001724                getFraction
  .text.getInteger
-                0x080017cc       0x1c Src\main.o
-                0x080017cc                getInteger
+                0x08001784       0x1c Src\main.o
+                0x08001784                getInteger
+ .text.sendLitters
+                0x080017a0       0x48 Src\main.o
+                0x080017a0                sendLitters
  .text.getLitters
                 0x080017e8       0x30 Src\main.o
                 0x080017e8                getLitters
@@ -1139,31 +1139,31 @@ LOAD c:/program files (x86)/atollic/truestudio for arm 8.1.0/armtools/bin/../lib
                 0x00000590       0x1d c:/program files (x86)/atollic/truestudio for arm 8.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7-m/crtn.o
 OUTPUT(HERMES.elf elf32-littlearm)
 
-.debug_info     0x00000000     0xb2f4
+.debug_info     0x00000000     0xb2d2
  .debug_info    0x00000000      0xece Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
  .debug_info    0x00000ece     0x1463 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
  .debug_info    0x00002331     0x1001 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.o
  .debug_info    0x00003332      0xe7c Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
  .debug_info    0x000041ae     0x118f Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
  .debug_info    0x0000533d     0x1e00 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.o
- .debug_info    0x0000713d     0x147e Src\main.o
- .debug_info    0x000085bb     0x1262 Src\stm32f1xx_hal_msp.o
- .debug_info    0x0000981d      0xe5a Src\stm32f1xx_it.o
- .debug_info    0x0000a677      0xc07 Src\system_stm32f1xx.o
- .debug_info    0x0000b27e       0x76 startup\startup_stm32f103xb.o
+ .debug_info    0x0000713d     0x145c Src\main.o
+ .debug_info    0x00008599     0x1262 Src\stm32f1xx_hal_msp.o
+ .debug_info    0x000097fb      0xe5a Src\stm32f1xx_it.o
+ .debug_info    0x0000a655      0xc07 Src\system_stm32f1xx.o
+ .debug_info    0x0000b25c       0x76 startup\startup_stm32f103xb.o
 
-.debug_abbrev   0x00000000     0x1b55
+.debug_abbrev   0x00000000     0x1b3d
  .debug_abbrev  0x00000000      0x2c2 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o
  .debug_abbrev  0x000002c2      0x399 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.o
  .debug_abbrev  0x0000065b      0x29e Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.o
  .debug_abbrev  0x000008f9      0x268 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.o
  .debug_abbrev  0x00000b61      0x354 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.o
  .debug_abbrev  0x00000eb5      0x364 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.o
- .debug_abbrev  0x00001219      0x2f1 Src\main.o
- .debug_abbrev  0x0000150a      0x223 Src\stm32f1xx_hal_msp.o
- .debug_abbrev  0x0000172d      0x22b Src\stm32f1xx_it.o
- .debug_abbrev  0x00001958      0x1eb Src\system_stm32f1xx.o
- .debug_abbrev  0x00001b43       0x12 startup\startup_stm32f103xb.o
+ .debug_abbrev  0x00001219      0x2d9 Src\main.o
+ .debug_abbrev  0x000014f2      0x223 Src\stm32f1xx_hal_msp.o
+ .debug_abbrev  0x00001715      0x22b Src\stm32f1xx_it.o
+ .debug_abbrev  0x00001940      0x1eb Src\system_stm32f1xx.o
+ .debug_abbrev  0x00001b2b       0x12 startup\startup_stm32f103xb.o
 
 .debug_loc      0x00000000     0x263e
  .debug_loc     0x00000000       0x69 Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.o

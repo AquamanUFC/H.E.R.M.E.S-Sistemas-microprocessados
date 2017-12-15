@@ -1,7 +1,7 @@
 main.c:86:6:sendData	16	static
-main.c:95:6:sendLitters	48	static
-main.c:107:5:getFraction	48	static
-main.c:114:5:getInteger	16	static
+main.c:95:5:getFraction	48	static
+main.c:102:5:getInteger	16	static
+main.c:107:6:sendLitters	48	static
 main.c:118:8:getLitters	24	static
 main.c:122:7:flow	8	static
 main.c:130:5:main	8	static

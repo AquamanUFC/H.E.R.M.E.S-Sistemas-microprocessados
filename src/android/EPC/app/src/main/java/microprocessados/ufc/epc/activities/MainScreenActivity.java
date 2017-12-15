@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -27,6 +30,9 @@ public class MainScreenActivity extends AppCompatActivity {
     private BluetoothDevice device;
     private TextView infoCard;
 
+    private SharedPreferences sharedPreferences;
+
+    public static final String MyPREFERENCES = "MyPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +40,7 @@ public class MainScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        flowController = new FlowController();
 
-
+        sharedPreferences = getSharedPreferences(MyPREFERENCES, getApplicationContext().MODE_PRIVATE);
 //        flowController.setAquaConsume(10);
         device = (BluetoothDevice) getIntent().getParcelableExtra("Device");
 
@@ -82,8 +88,8 @@ public class MainScreenActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeCardColor(){
-
+    public void changeCardColor(int color){
+        this.card.setBackgroundColor(color);
     }
 
     @SuppressLint("HandlerLeak")
@@ -105,6 +111,18 @@ public class MainScreenActivity extends AppCompatActivity {
                     case 2:
                         String consumo = new String((byte[]) msg.obj);
                         infoCard.setText(consumo);
+                        float max_consumo = sharedPreferences.getFloat("max",0);
+                        Log.d("BLUETOOTH","CONSUMO_MAX" + Float.parseFloat(consumo));
+                        Log.d("BLUETOOTH","CONSUMO" + Float.parseFloat(consumo));
+                        if(Float.parseFloat(consumo)>max_consumo)
+                        {
+                            changeCardColor(Color.parseColor("#F44336"));
+
+                        }else if(Float.parseFloat(consumo)>= max_consumo * 0.8){
+                            changeCardColor(Color.parseColor("#FFB300"));
+                        }else{
+                            changeCardColor(Color.parseColor("#4CAF50"));
+                        }
 //                        Toast.makeText(getApplicationContext(),
 //                                "RECEBIDO DADO" + msg.obj, Toast.LENGTH_SHORT)
 //                                .show();
@@ -120,6 +138,10 @@ public class MainScreenActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        bluetoothController.disconnect();
+        try {
+            bluetoothController.disconnect();
+        }catch(Exception e){
+
+        }
     }
 }

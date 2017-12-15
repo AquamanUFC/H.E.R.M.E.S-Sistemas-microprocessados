@@ -3,6 +3,7 @@ package microprocessados.ufc.epc.activities;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,12 +21,20 @@ public class PairedDevicesActivity extends AppCompatActivity {
     private BluetoothController bluetoothController;
     private ListView devicesList;
     private Handler connectHandler;
-
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paired_devices);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ConfigActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setBluetooth() {
@@ -73,7 +82,11 @@ public class PairedDevicesActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        bluetoothController.disconnect();
+        try {
+            bluetoothController.disconnect();
+        }catch(Exception e){
+
+        }
     }
 
 }

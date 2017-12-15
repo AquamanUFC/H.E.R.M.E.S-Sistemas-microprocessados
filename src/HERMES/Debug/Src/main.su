@@ -1,0 +1,8 @@
+main.c:73:7:flow	8	static
+main.c:79:6:sendData	16	static
+main.c:93:5:getFraction	16	static
+main.c:100:5:getInteger	8	static
+main.c:179:6:SystemClock_Config	72	static
+main.c:106:5:main	40	static
+main.c:284:6:HAL_GPIO_EXTI_Callback	0	static
+main.c:295:6:_Error_Handler	0	static

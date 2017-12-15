@@ -1,0 +1,13 @@
+main.c:74:6:sendData	16	static
+main.c:83:5:getFraction	48	static
+main.c:90:5:getInteger	16	static
+main.c:95:6:sendLitters	48	static
+main.c:106:8:getLitters	24	static
+main.c:110:7:flow	8	static
+main.c:118:5:main	16	static
+main.c:173:6:SystemClock_Config	72	static
+main.c:218:13:MX_NVIC_Init	8	static
+main.c:232:13:MX_USART1_UART_Init	8	static
+main.c:257:13:MX_GPIO_Init	40	static
+main.c:289:6:HAL_GPIO_EXTI_Callback	16	static
+main.c:305:6:_Error_Handler	16	static

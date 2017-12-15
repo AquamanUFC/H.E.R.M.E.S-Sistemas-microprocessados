@@ -54,6 +54,7 @@ public class ConnectThread extends Thread {
     public void cancel() {
         try {
             mmSocket.close();
+            connectionHandler.sendEmptyMessage(3);
         } catch (IOException e) { }
     }
 

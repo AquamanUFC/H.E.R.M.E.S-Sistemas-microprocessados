@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 
 import microprocessados.ufc.epc.R;
 import microprocessados.ufc.epc.controllers.BluetoothController;
-import microprocessados.ufc.epc.controllers.ConnectThread;
 import microprocessados.ufc.epc.controllers.FlowController;
 
 public class MainScreenActivity extends AppCompatActivity {
@@ -111,9 +109,17 @@ public class MainScreenActivity extends AppCompatActivity {
 //                                "RECEBIDO DADO" + msg.obj, Toast.LENGTH_SHORT)
 //                                .show();
                         break;
+                    case 3:
+                        Toast.makeText(getApplicationContext(),"Desconectado com sucesso",Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         };
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        bluetoothController.disconnect();
+    }
 }

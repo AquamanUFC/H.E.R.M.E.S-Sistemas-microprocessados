@@ -1,23 +1,15 @@
 package microprocessados.ufc.epc.activities;
 
-import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 
 import microprocessados.ufc.epc.CustomAdapter;
 import microprocessados.ufc.epc.R;
@@ -81,6 +73,7 @@ public class PairedDevicesActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        bluetoothController.disconnect();
     }
 
 }

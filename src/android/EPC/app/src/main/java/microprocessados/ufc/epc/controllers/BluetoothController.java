@@ -18,7 +18,6 @@ public class BluetoothController {
     private ConnectThread mConnectThread;
     private BluetoothDevice mDevice;
     private BluetoothAdapter mBluetoothAdapter;
-    private ConnectedThread mConnectedThread;
     private Handler connectHandler;
 
     public BluetoothController(Handler connectHandler) throws NoBluetoothFoundException, BluetoothDisabledException {
@@ -81,4 +80,9 @@ public class BluetoothController {
         else
             return null;
     }
+
+    public void disconnect(){
+        mConnectThread.cancel();
+    }
+
 }
